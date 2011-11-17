@@ -87,6 +87,9 @@ class MyExternal : public String::ExternalAsciiStringResource {
 };
 
 void BSON::Initialize(v8::Handle<v8::Object> target) {
+  int pid = (int) getpid();
+  srand(pid);
+
   // Grab the scope of the call from Node
   HandleScope scope;
   // Define a new function template

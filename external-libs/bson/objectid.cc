@@ -10,6 +10,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <limits>
+#include <sys/types.h>
+#include <unistd.h>
 
 #include "objectid.h"
 
@@ -61,7 +63,6 @@ char *ObjectID::oid_id_generator() {
   
   /* TODO rand sucks. find something better */
   if (!fuzz){
-    srand(t);
     fuzz = rand();
   }
   
